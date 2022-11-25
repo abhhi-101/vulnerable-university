@@ -1,4 +1,4 @@
-GROUP: AB3  -  Vulnerable University
+GROUP: AB4  -  Vulnerable University
 
 G.H.Raisoni College of Engineering and Management, Pune
 
