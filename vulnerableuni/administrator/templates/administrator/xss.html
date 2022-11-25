@@ -1,4 +1,4 @@
-{% extends "introduction/base.html" %}
+{% extends "administrator/base.html" %}
 {% block content %}
 
 <div class="content">
@@ -76,8 +76,10 @@
             </p>
 
             <br>
-            <div align="right"> <button class="btn btn-info" type="button" onclick="window.location.href='/xssL'">Access
-                    Lab</button></div>
+            <form action="{% url 'home' %}" class="inline">
+                <button class="btn btn-info" >Access XSS lab</button>
+            </form>
+            <!-- <div align="right"> <button class="btn btn-info" type="button" onclick="window.locaktion='{% url 'search' %}'">Access Lab</button></div> -->
 
             </p>
         </div><br>

@@ -20,7 +20,7 @@ def search(request):
      return render(request,'administrator/search.html',{'query':q})
 
 def xss(request):
-    if request.user.is_authenticated:
+    '''if request.user.is_authenticated:
         q=request.GET.get('q','')
         #f=FAANG.objects.filter(company=q)
         if f:
@@ -29,4 +29,9 @@ def xss(request):
         else:
             return render(request,'administrator/xss.html', {'query': q})
     else:
-        return redirect('login')
+        return redirect('login')'''
+    return render(request, 'administrator/xss.html')
+
+def labs(request):
+    
+    return render(request, 'administrator/labs.html')
