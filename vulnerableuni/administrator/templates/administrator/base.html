@@ -32,7 +32,7 @@
                         <a class="nav-item nav-link" href="#">logout</a>
                     {% else %}
                         <a class="nav-item nav-link" href="{% url 'labs' %}"">Labs</a>                        
-                        <a class="nav-item nav-link" href="#">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'login'  %}">Login</a>
                         <a class="nav-item nav-link" href="{% url 'register' %}"">Register</a>
                     {% endif %}    
                 </div>      
