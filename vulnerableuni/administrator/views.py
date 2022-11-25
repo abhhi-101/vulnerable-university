@@ -12,7 +12,12 @@ def about(request):
     context = {
         'title': 'Blogging using template'
     }
-    return render(request, 'blog/about.html', context)
+    return render(request, 'administrator/about.html', context)
+
+def search(request):
+     q = request.GET.get('search','')
+     
+     return render(request,'administrator/search.html',{'query':q})
 
 def xss(request):
     if request.user.is_authenticated:
