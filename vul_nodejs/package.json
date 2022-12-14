@@ -1,0 +1,26 @@
+{
+  "name": "simple_application",
+  "version": "1.0.0",
+  "description": "A simple Node.js web application with various security weaknesses.",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ratnakar-infosec/simple_application.git"
+  },
+  "author": "Ratnakar Singh",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ratnakar-infosec/simple_application/issues"
+  },
+  "homepage": "https://github.com/ratnakar-infosec/simple_application#readme",
+  "dependencies": {
+    "cookie-session": "^2.0.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.7.3",
+    "node-fetch": "^2.6.7"
+  }
+}
