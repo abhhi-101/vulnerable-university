@@ -12,12 +12,23 @@
 2. NodeJs
 
 ## Run in Docker [commands]
-1. Run the application in a docker container:
+1. Clone the code locally
+
+```bash
+git clone https://github.com/abhhi-101/vulnerable-university.git
+```
+2. Move to the directory
+
+```bash
+cd vulnerable-university/vul_nodejs
+```
+
+3. Run the application in a docker container:
 ```bash
 docker-compose up -d
 ```
 
-2. Stop the running container:
+4. Stop the running container:
 ```bash
 docker-compose down
 ```
