@@ -8,8 +8,10 @@ You need to have
 
 
 ## How to use
-1. `git clone https://github.com/abhhi-101/vulnerable-university.git`
-2. `cd vulnerable-university`
+1. Clone the repository locally
+`git clone https://github.com/abhhi-101/vulnerable-university.git`
+2. Move into the folder
+`cd vulnerable-university`
 
 We have added 2 Vulnerable Applications  using
 1. Python - Django
