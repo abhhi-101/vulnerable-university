@@ -1,4 +1,4 @@
-# Simple Application
+# Nodejs Vulnerable Application
 
 ## System Information
 
@@ -8,23 +8,12 @@
 - **Platform (developed on)**: Ubuntu 20.04
 
 ## Run in Docker [commands]
-
-Clone this repository locally:
-```bash
-git clone https://github.com/ratnakar-infosec/simple_application.git
-```
-
-Move to the application directory:
-```bash
-cd simple_application/
-```
-
-Run the application in a docker container:
+1. Run the application in a docker container:
 ```bash
 docker-compose up -d
 ```
 
-Stop the running container:
+2. Stop the running container:
 ```bash
 docker-compose down
 ```
