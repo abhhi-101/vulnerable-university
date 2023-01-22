@@ -7,6 +7,10 @@
 - **Database**: MongoDB
 - **Platform (developed on)**: Ubuntu 20.04
 
+### System Requirements
+1. Docker
+2. NodeJs
+
 ## Run in Docker [commands]
 1. Run the application in a docker container:
 ```bash
