@@ -3,18 +3,66 @@
 <div class="d-flex d-flex justify-content-center flex-column align-items-stretch flex-shrink-0 bg-light" style="width: 70%;">
     <a href="{% url 'labs' %}" class="d-flex align-items-center flex-shrink-0 p-3 link-dark text-decoration-none border-bottom">
       <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-bold"><strong><h3>Vulnerable University: <u>Index</u></h3></strong></span>
+      <span class="fs-5 fw-bold"><strong><h3>Vulnerable University</h3></strong></span>
     </a>
     <div class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
       <a href="{% url 'xss' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
         <div class="d-flex w-100 align-items-center justify-content-between">
-          <strong class="mb-1">XSS vulnerability</strong>
+          <strong class="mb-1">XSS Learnings</strong>
           <small> <strong>XSS</strong></small>
         </div>
-     <div class="col-10 mb-1 small bg-light.bg-gradient">Access the XSS (Cross site scripting) lab to learn and exploit us.</div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the XSS (Cross site scripting) lab to learn and exploit us.</div>
+      </a>
+    </div>
+    <br />
+    <div style="left:-1000px" class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
+      <a href="{% url 'search' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Reflected XSS (Cross site scripting) lab to exploit us.</strong>
+          <small> <strong>XSS</strong></small>
+        </div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the Brute force lab to learn Auth related issues.</div>
+      </a>
+    </div>
+    <div style="left:-1000px" class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
+      <a href="{% url 'sxss' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Stored XSS (Cross site scripting) lab to exploit us.</strong>
+          <small> <strong>XSS</strong></small>
+        </div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the Brute force lab to learn Auth related issues.</div>
+      </a>
+    </div>
+    <br />
+    <div class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
+      <a href="{% url 'bruteforce' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Login Brute force</strong>
+          <small> <strong>Auth</strong></small>
+        </div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the Brute force lab to learn Auth related issues.</div>
+      </a>
+    </div>    <br />
+    <div class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
+      <a href="{% url 'csrf' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">Insecure Password policy</strong>
+          <small> <strong>Auth</strong></small>
+        </div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the Insecure password policy lab to learn Auth related issues.</div>
+      </a>
+    </div>
+    <br />
+    <div class="list-group list-group border-bottom scrollarea bg-light.bg-gradient">
+      <a href="{% url 'csrf' %}" class="list-group-item list-group-item-action list-group-item-info py-3 lh-tight" aria-current="true">
+        <div class="d-flex w-100 align-items-center justify-content-between">
+          <strong class="mb-1">CSRF (Cross site Request forgery)</strong>
+          <small> <strong>Auth</strong></small>
+        </div>
+    <div class="col-10 mb-1 small bg-light.bg-gradient">Access the CSRF lab to learn Auth related issues.</div>
       </a>
     </div>
     
 </div>
 
-  {% endblock content %}
+{% endblock content %}

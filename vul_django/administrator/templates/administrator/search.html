@@ -3,6 +3,16 @@
 
     <h3>Did you found it?</h3>
 
-<h1>You searched for <strong>{{ query | safe }}</strong></h1>
+<form class="example" action="{% url 'search' %}">
+    <input type="text" placeholder="Search for XSS .." name="search">
+    <button type="submit"><strong>search</strong></button>
+</form>
+<br />
+<br />
 
+{% if query %}
+    <h3>You searched for <strong>{{ query | safe }}</strong></h3>
+{% else %}
+    <h3>Com'on search for <strong>something </strong>...</h3>
+{% endif %}
 {% endblock content %}

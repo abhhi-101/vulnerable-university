@@ -1,0 +1,54 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+<header>
+    <h1>CSRF Attack on Username Change Functionality</h1>
+</header>
+<main>
+    <p>Cross-site request forgery (CSRF) is a type of web security vulnerability where an attacker tricks a user into performing an action on a website without their knowledge or consent. One common target of CSRF attacks is the username change functionality on websites.</p>
+    <h2>How CSRF Attacks Work</h2>
+    <p>CSRF attacks on the username change functionality typically involve an attacker tricking a user into clicking on a link or visiting a malicious website that sends a request to the target website to change the user's username. Because the request appears to be coming from the user, the website accepts it and changes the username without the user's knowledge or consent.</p>
+    <p>While it is possible to protect against CSRF attacks by implementing measures such as CSRF tokens and same-origin policy, many websites are still vulnerable to this type of attack. This is especially true for websites that do not implement these security measures or do not properly validate requests.</p>
+    <h2>Preventing CSRF Attacks</h2>
+    <p>There are several steps that website owners and users can take to prevent CSRF attacks:</p>
+    <ul>
+        <li>Implement CSRF tokens on forms and requests</li>
+        <li>Implement same-origin policy to prevent requests from other domains</li>
+        <li>Validate all incoming requests to ensure they are legitimate</li>
+        <li>Use the HTTP POST method for sensitive actions such as changing usernames</li>
+        <li>Do not trust user input, and sanitize all input before using it in requests</li>
+    </ul>
+    <p>By taking these steps, website owners and users can help protect against CSRF attacks and keep their accounts secure.</p>
+</main>
+<pre><code>
+&lt;html&gt;
+    &lt;body&gt;
+        &lt;form name='myForm' id='myForm' method="POST" action="http://127.0.0.1:8000/sxss"&gt;
+            &lt;input type="hidden" name="new_username" value="hacker"/&gt;
+            &lt;input type="submit" value="Submit"/&gt;
+        &lt;/form&gt;
+        &lt;script&gt;
+            document.addEventListener('DOMContentLoaded', function(event) {
+                document.createElement('form').submit.call(document.getElementById('myForm'));
+                });
+        &lt;/script&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p>
+    Copy the above code in a file with <strong>.html</strong> extension, and open the file in same browser to see magic!
+</p>
+{% if user.is_authenticated %}
+    <form action="{% url 'sxss' %}" class="inline">
+        <button class="btn btn-info" >Access CSRF lab</button>
+    </form>
+    <br />
+{% else %} 
+    <form action="{% url 'login' %}" class="inline">
+        <button class="btn btn-info" >Access CSRF lab</button>
+    </form>
+    <br />
+
+{% endif %}
+
+{% endblock content %}

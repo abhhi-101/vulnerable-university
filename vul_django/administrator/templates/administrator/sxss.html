@@ -1,0 +1,17 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<h3>Change your username:</h3>
+<form class="example" action="{% url 'sxss' %}" method="POST">
+    <input type="text" placeholder="Change username" name="new_username">
+    <button type="change"><strong>change</strong></button>
+</form>
+<br />
+<br />
+
+{% if username %}
+    <h3>Username changed to <strong>{{ username | safe }}</strong></h3>
+{% else %}
+    <h3>Your username is <strong>{{ old_username}}</strong></h3>
+{% endif %}
+{% endblock content %}

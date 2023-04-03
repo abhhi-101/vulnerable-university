@@ -1,9 +1,11 @@
 {% extends "administrator/base.html" %}
 {% block content %}
+
+
     <h2>You have been logged out</h2>
     <div class="border-top pt-3">
         <small class="text-muted">
-            <a href="{% url 'login' %}">Log In Again</a>
+            <h3><a href="{% url 'login' %}"><strong>Click to Login</strong></a></h3>
         </small>
     </div>
 {% endblock content %}

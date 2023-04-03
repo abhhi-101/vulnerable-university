@@ -1,0 +1,36 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+<header>
+    <h1>Brute Force Attack on Login Page</h1>
+</header>
+<main>
+    <p>A brute force attack is a type of cyber attack where an attacker attempts to crack a password or encryption key by trying every possible combination of characters until they find the correct one. One common target of brute force attacks is login pages, where an attacker can gain unauthorized access to a user's account.</p>
+    <h2>How Brute Force Attacks Work</h2>
+    <p>Brute force attacks on login pages typically involve an automated tool that sends a large number of login requests to the target website, each with a different combination of username and password. The tool may use a dictionary of commonly used passwords, or it may simply try every possible combination of characters.</p>
+    <p>While it is possible to protect against brute force attacks by implementing rate limiting, CAPTCHA challenges, and other security measures, many websites are still vulnerable to this type of attack. Passwords that are easy to guess or commonly used are especially vulnerable.</p>
+    <h2>Preventing Brute Force Attacks</h2>
+    <p>There are several steps that website owners and users can take to prevent brute force attacks:</p>
+    <ul>
+        <li>Use a strong, unique password for every account</li>
+        <li>Enable two-factor authentication wherever possible</li>
+        <li>Implement rate limiting and CAPTCHA challenges on login pages</li>
+        <li>Regularly monitor login attempts for suspicious activity</li>
+        <li>Consider using a password manager to generate and store strong passwords</li>
+    </ul>
+    <p>By taking these steps, website owners and users can help protect against brute force attacks and keep their accounts secure.</p>
+</main>
+
+{% if user.is_authenticated %}
+    <form action="{% url 'logout' %}" class="inline">
+        <button class="btn btn-info" >Access Bruteforce lab</button>
+    </form>
+    <br />
+{% else %} 
+    <form action="{% url 'login' %}" class="inline">
+        <button class="btn btn-info" >Access Bruteforce lab</button>
+    </form>
+    <br />
+
+{% endif %}
+
+{% endblock content %}

@@ -2,7 +2,7 @@
 {% block content %}
 
 <div class="content">
-    <h3>Cross Site Scripting</h3>
+    <h3><u>Cross Site Scripting</u></h3></div> <br />
     <div class="box">
 
         <h4>What is Cross Site Scripting or XSS?</h4>
@@ -24,22 +24,25 @@
             message, search result, or any other response that includes some or all of the input provided by the user as
             part of the request, without that data being made safe to render in the browser, and without permanently
             storing the user provided data. <br></p>
-
+            <form action="{% url 'search' %}" class="inline">
+                <button class="btn btn-info" >Access R-XSS lab</button>
+            </form>
+            <br />
         <h4>Stored XSS</h4>
         <p class="bp">Stored XSS generally occurs when user input is stored on the target server, such as in a database,
             in a message forum, visitor log, comment field, etc. And then a victim is able to retrieve the stored data
             from the web application without that data being made safe to render in the browser.Blog comments sessions
             are places which can be vulnerable to stored xss , once a vulnerable xss payload is posted then every user
             that visits the blog comment session would have the impact of the vulnerability.</p>
-
+            <form action="{% url 'sxss' %}" class="inline">
+                <button class="btn btn-info" >Access S-XSS lab</button>
+            </form>
+            <br />
         <h4>DOM XSS</h4>
         <p class="bp">This type of XSS is possible when javascript takes in an user controllable code and passes it to a
             sink ,for code execution . Examples of sinks are window.location , innerhtml , document.write .When the
             attacker tries to inject malicious code into a sink , then this type of XSS is called the DOM Xss</p>
 
-
-
-        <button class="coll btn btn-info">Lab Details</button>
         <div class="lab">
             <p class="bp">
                 This lab will help you to understand the Reflective Type of XSS.
@@ -61,23 +64,17 @@
                 <li>This can be acheived by using a script tag and malicious javascript code.</li>
                 <li>For now let's just use a basic javascript code to alert a text to prove that xss is possible .</li>
 
-                <div class="container"> <code> &lt;script &gt;alert(“xss”) &lt;/script &gt;</code></div>
+                <div class="container"> <code> &lt;script &gt;alert("xss") &lt;/script &gt;</code></div>
 
 
                 <li>Now when a search query is performed with the above payload you can see that the browser is able to
                     render the script tag and execute the javascript , thus alerting “xss” with a pop up.</li>
-
-
             </ul>
-
-
-
-
             </p>
 
             <br>
-            <form action="{% url 'home' %}" class="inline">
-                <button class="btn btn-info" >Access XSS lab</button>
+            <form action="{% url 'labs' %}" class="inline">
+                <button class="btn btn-info" >Access Labs</button>
             </form>
             <!-- <div align="right"> <button class="btn btn-info" type="button" onclick="window.locaktion='{% url 'search' %}'">Access Lab</button></div> -->
 
@@ -95,7 +92,7 @@
         </p>
 
         <p class="bp">In the above code the q variable holds the users input . This input is stored in a variable called
-            <b>‘query’</b> , which is sent to a html template which renders a html along with the value of the query.
+            <b>'query'</b> , which is sent to a html template which renders a html along with the value of the query.
         </p>
         <p class="bp">The query received from the user is considered to be safe which resulted in the template rendering
             the user input without escaping the input. This can be seen by using the keyword <b>'safe'</b> in the html
@@ -109,24 +106,18 @@
         <p class="bp">Without the safe keyword Django would automatically escape the malicious string in the query
             context variable.</p>
 
-        <p class="bp">It does this by passing all string data through Python’s <code>html.escape()</code> function. This
+        <p class="bp">It does this by passing all string data through Python's <code>html.escape()</code> function. This
             function will:</p>
         <ul class="bp">
             <li>Replace any & with an <code>& amp;</code> ampersand HTML character-reference</li>
-            <li>Replace any < or> with an & lt; or & gt; HTML character-reference</li>
+            <li>Replace any <or> with an & lt; or & gt; HTML character-reference</li>
             <li>Replace any " with an escaped \"</li>
             <li>Replace any ' with an escaped \'</li>
-
-
         </ul>
-
         </p>
         <p class="bp">
-
-
             <br>
         <h4>Now talking about the mitigation</h4>
-
         <br>
         <ol>
             <li>Encode the following characters with HTML entity encoding to prevent switching into any execution
@@ -134,11 +125,9 @@
                 characters significant in XML.
 
                 <ul>
-                    <li>& --> & amp;</li>
-                    <li>
-                        < --> & lt;
-                    </li>
-                    <li> --> & gt;</li>
+                    <li>'&' --> & amp;</li>
+                    <li>'<' --> & lt;</li>
+                    <li>' '--> & gt;</li>
                     <li>" --> & quot;</li>
                     <li>' --> &# x27;</li>
                 </ul>
@@ -153,20 +142,8 @@
             <li>URL Encode Before Inserting Untrusted Data into HTML URL Parameter Values</li>
             <li>Implement Content Security Policy</li>
             <li>Use HTTPOnly cookie flag</li>
-
-
         </ol>
-
         </p>
-
-
-
-
-
     </div>
 </div>
-
-
-
-
 {% endblock content %}

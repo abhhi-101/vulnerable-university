@@ -4,9 +4,12 @@ from . import views
 
 urlpatterns = [
     path("", views.home, name="home"),
-    path("about/", views.about, name="about"),
-    path("xss/", views.xss, name='xss'),
+    path("about", views.about, name="about"),
+    path("xss", views.xss_lab, name='xss'),
+    path("bruteforce", views.bruteforce, name='bruteforce'),
     path("search", views.search, name="search"),
-    path("labs", views.labs, name="labs")
+    path("labs", views.labs, name="labs"),
+    path("sxss", views.change_username, name="sxss"),
+    path("csrf", views.csrf_lab, name="csrf")
 
 ]
