@@ -3,9 +3,9 @@
 ### B.Tech computer engineering, Final Year Project
 
 ## Prerequisite
-You need to have 
-1. Git CLI installed
-
+You need to have following tools installed:
+1. Git CLI 
+2. Docker CLI
 
 ## How to use
 1. Clone the repository locally
