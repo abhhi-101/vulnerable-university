@@ -52,7 +52,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-ROOT_URLCONF = 'vulnerableuni.urls'
+ROOT_URLCONF = 'vul_django.urls'
 
 TEMPLATES = [
     {
@@ -70,7 +70,7 @@ TEMPLATES = [
     },
 ]
 
-WSGI_APPLICATION = 'vulnerableuni.wsgi.application'
+WSGI_APPLICATION = 'vul_django.wsgi.application'
 
 
 # Database
