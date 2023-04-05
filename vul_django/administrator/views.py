@@ -15,7 +15,9 @@ def change_username(request):
         else: 
             return render(request, 'administrator/sxss.html',{"old_username":User.objects.get(username=request.user.username)})
     else:
-        return redirect('login')
+        #return redirect('login')
+        new_username = request.POST.get('new_username')
+        return render(request, 'administrator/sxss.html',{"username": new_username} )
 # To exploit - rXSS
 def search(request):
     if (request.GET.get('search','')==''):
@@ -27,7 +29,9 @@ def search(request):
 def bruteforce(request):
     return render(request, 'administrator/bruteforce.html')
 #======
-
+def clickjacking(request):
+    
+    return render(request, 'administrator/clickjacking.html')
 
 
 
@@ -44,7 +48,9 @@ def xss_lab(request):
 def csrf_lab(request):
     return render(request, 'administrator/csrf.html')
 #======
-
+def access_control(request):
+    return render(request, 'administrator/access_control.html')
+#======
 
 
 # System Pages

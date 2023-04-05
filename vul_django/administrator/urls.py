@@ -10,6 +10,8 @@ urlpatterns = [
     path("search", views.search, name="search"),
     path("labs", views.labs, name="labs"),
     path("sxss", views.change_username, name="sxss"),
-    path("csrf", views.csrf_lab, name="csrf")
+    path("csrf", views.csrf_lab, name="csrf"),
+    path("clickjacking", views.clickjacking, name="clickjacking"),
+    path("access_control", views.access_control, name="brokenAccessControl")
 
 ]

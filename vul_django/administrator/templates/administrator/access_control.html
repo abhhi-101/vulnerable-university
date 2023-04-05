@@ -1,0 +1,42 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<h1>Broken Access Control: A Major Security Concern for Web Applications</h1>
+<p>Web applications are becoming increasingly popular, and with their popularity comes the need for strong security measures to protect sensitive information. Broken access control is a major security concern for web applications that can have serious consequences if left unchecked.</p>
+<h2>What is Broken Access Control?</h2>
+<p>Broken access control refers to the failure of a web application to restrict users from accessing unauthorized resources or performing unauthorized actions. Access control is a fundamental aspect of web application security, as it ensures that users only have access to the resources they are authorized to use.</p>
+<p>When access control is broken, attackers can exploit the vulnerability to gain access to sensitive information, modify data, or perform other malicious actions. This can result in data breaches, financial losses, and damage to the reputation of the affected organization.</p>
+<h2>Common Causes of Broken Access Control</h2>
+<p>There are several common causes of broken access control in web applications:</p>
+<ul>
+  <li>Improperly configured access controls</li>
+  <li>Insufficiently validated user input</li>
+  <li>Weak authentication and authorization mechanisms</li>
+  <li>Flaws in session management</li>
+  <li>Security misconfigurations</li>
+</ul>
+<h2>Examples of Broken Access Control</h2>
+<p>Here are a few examples of broken access control:</p>
+<ul>
+  <li>A user is able to access sensitive information by modifying the URL of a web page.</li>
+  <li>A user is able to access the administrative functions of a web application without proper authentication or authorization.</li>
+  <li>A user is able to modify data that they should not have access to by manipulating parameters in a request.</li>
+</ul>
+<h2>How to Prevent Broken Access Control</h2>
+<p>Preventing broken access control requires a combination of best practices and technologies:</p>
+<ul>
+  <li>Implement proper authentication and authorization mechanisms.</li>
+  <li>Use secure session management practices.</li>
+  <li>Validate user input to prevent injection attacks.</li>
+  <li>Implement proper access controls on all resources.</li>
+  <li>Conduct regular security audits and penetration testing to identify vulnerabilities.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Broken access control is a serious security concern for web applications. It can lead to data breaches, financial losses, and damage to an organization's reputation. By implementing proper security measures and following best practices, organizations can prevent broken access control and protect their sensitive information.</p>
+<br />
+<p>In the <strong>Lab</strong> below, you can access <b>Change Username page</b> without loggin in!</p>
+<form action="{% url 'sxss' %}" class="inline">
+    <button class="btn btn-info" >Access Broken Access-Control lab</button>
+</form>
+<br />
+{% endblock content %}

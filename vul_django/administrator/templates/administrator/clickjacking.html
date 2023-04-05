@@ -1,0 +1,42 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<head>
+	<title>Clickjacking Attack on Login Page</title>
+</head>
+<body>
+	<h1>Clickjacking Attack on Login Page</h1>
+	<p>Clickjacking is a type of web attack where an attacker tricks a user into clicking on a button or link on a webpage without the user's knowledge. This can be done by overlaying an invisible element on top of a legitimate button or link, making it seem like the user is clicking on the real thing when in fact they are interacting with the attacker's hidden element.</p>
+	<p>One common target for clickjacking attacks is login pages. By tricking a user into entering their login credentials on a fake login page, an attacker can gain access to the user's account and potentially steal sensitive information.</p>
+	<h2>How to protect against clickjacking attacks on login pages</h2>
+	<p>Fortunately, there are steps you can take to protect yourself against clickjacking attacks:</p>
+	<ol>
+		<li>Use a reputable web browser that has built-in protection against clickjacking attacks.</li>
+		<li>Never enter your login credentials on a page that looks suspicious or unfamiliar.</li>
+		<li>Check the URL of the login page to make sure it is legitimate and secure (look for "https" in the URL).</li>
+		<li>Enable two-factor authentication (2FA) on your accounts to add an extra layer of security.</li>
+	</ol>
+	<h2>Conclusion</h2>
+	<p>Clickjacking attacks on login pages are a serious threat, but with the right precautions and awareness, you can protect yourself against them. Always be vigilant when entering sensitive information online, and stay up-to-date on the latest security best practices to stay safe in the ever-evolving world of cybersecurity.</p>
+    <h3>Below is a POC .html code to exploit clickjacking on Login page of this website</h3>
+<pre><code>
+    &lt;!DOCTYPE html&gt;
+    &lt;html lang=&quot;en-US&quot;&gt;
+    &lt;head&gt;
+        &lt;meta charset=&quot;UTF-8&quot;&gt;
+        &lt;title&gt;I Frame&lt;/title&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;h3&gt;clickjacking vulnerability&lt;/h3&gt;
+        &lt;iframe src=&quot;http://127.0.0.1:8000/login/&quot; height=&quot;550px&quot; width=&quot;700px&quot;&gt;&lt;/iframe&gt;
+    &lt;/body&gt;
+    &lt;/html&gt;
+</code></pre>
+    <p>Copy the code in a file <i>ex-</i><b>clickjacking.html</b> and open in your browser, you can flow the user and get their credentials.</p>
+</body>
+
+<form action="{% url 'login' %}" class="inline">
+    <button class="btn btn-info" >Access clickjacking lab</button>
+</form>
+<br />
+{% endblock content %}
