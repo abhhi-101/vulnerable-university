@@ -1,0 +1,43 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<h1>The Dangers of Sensitive Data Exposure in Page Source Code</h1>
+<p>Web applications have become an integral part of our daily lives, and with them comes the risk of sensitive data exposure. One of the most common ways that sensitive data can be exposed is through page source code. In this blog, we will explore the dangers of sensitive data exposure in page source code and what can be done to prevent it.</p>
+<h2>What is Sensitive Data Exposure?</h2>
+<p>Sensitive data exposure refers to the unauthorized disclosure of sensitive information such as passwords, credit card numbers, and other personal information. This type of data exposure can lead to identity theft, financial fraud, and other serious consequences.</p>
+<h2>How Does Sensitive Data Get Exposed in Page Source Code?</h2>
+<p>Page source code contains the HTML, CSS, and JavaScript that make up a web page. Sensitive data can be exposed in page source code in several ways:</p>
+<ul>
+  <li>Using unencrypted HTTP connections</li>
+  <li>Storing sensitive data in cookies or hidden form fields</li>
+  <li>Storing sensitive data in JavaScript variables</li>
+  <li>Storing sensitive data in meta tags or comments</li>
+</ul>
+<h2>The Dangers of Sensitive Data Exposure in Page Source Code</h2>
+<p>The exposure of sensitive data in page source code can have serious consequences:</p>
+<!-- Change the default password from abhhi:abhhi to something secure -->
+
+<ul>
+  <li>Identity theft: Sensitive information such as social security numbers, credit card numbers, and passwords can be used by attackers to steal identities and commit financial fraud.</li>
+  <li>Data breaches: Exposing sensitive data in page source code can make it vulnerable to attacks by hackers and other malicious actors, leading to data breaches and the loss of confidential information.</li>
+  <li>Loss of customer trust: If customers discover that their sensitive information has been exposed in page source code, they may lose trust in the affected organization and take their business elsewhere.</li>
+</ul>
+<h2>How to Prevent Sensitive Data Exposure in Page Source Code</h2>
+<p>Preventing sensitive data exposure in page source code requires a combination of best practices and technologies:</p>
+<ul>
+  <li>Use encrypted HTTPS connections to protect sensitive information in transit.</li>
+  <li>Do not store sensitive data in cookies or hidden form fields.</li>
+  <li>Use server-side scripting to handle sensitive data instead of storing it in JavaScript variables.</li>
+  <li>Use secure coding practices to avoid accidentally exposing sensitive data in meta tags or comments.</li>
+  <li>Conduct regular security audits and penetration testing to identify vulnerabilities.</li>
+</ul>
+<h2>Conclusion</h2>
+<p>Sensitive data exposure in page source code is a serious security concern that can have significant consequences for both individuals and organizations. By following best practices and using the right technologies, organizations can prevent sensitive data exposure and protect their sensitive information.</p>
+
+<br />
+<p>Can you find sensitive information in the <strong>Source-Code</strong> of this page? </p> 
+<form action="view-source:http://127.0.0.1:8000/sen_info" class="inline">
+    <a class="btn btn-info" onclick="viewSource()" >Visit "view-source:http://127.0.0.1:8000/sen_info"</a>
+</form>
+<br />
+{% endblock content %}

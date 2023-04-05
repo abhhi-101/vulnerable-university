@@ -51,6 +51,10 @@ def csrf_lab(request):
 def access_control(request):
     return render(request, 'administrator/access_control.html')
 #======
+def sen_info(request):
+    return render(request, 'administrator/info.html')
+#======
+
 
 
 # System Pages

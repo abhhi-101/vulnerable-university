@@ -12,6 +12,7 @@ urlpatterns = [
     path("sxss", views.change_username, name="sxss"),
     path("csrf", views.csrf_lab, name="csrf"),
     path("clickjacking", views.clickjacking, name="clickjacking"),
-    path("access_control", views.access_control, name="brokenAccessControl")
+    path("access_control", views.access_control, name="brokenAccessControl"),
+    path("sen_info", views.sen_info, name="sen_info")
 
 ]
