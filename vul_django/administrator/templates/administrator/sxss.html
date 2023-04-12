@@ -1,11 +1,24 @@
 {% extends "administrator/base.html" %}
-{% block content %}
+{% block content %} {% load static %}
 
 <h3>Change your username:</h3>
 <form class="example" action="{% url 'sxss' %}" method="POST">
     <input type="text" placeholder="Change username" name="new_username">
     <button type="change"><strong>change</strong></button>
 </form>
+
+
+<style>
+
+    body {
+      background: url("{% static 'administrator/bg.png' %}") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
 <br />
 <br />
 

@@ -1,12 +1,23 @@
 {% extends "administrator/base.html" %}
-{% block content %}
-
+{% block content %} {% load static %}
     <h3>Did you found it?</h3>
 
 <form class="example" action="{% url 'search' %}">
     <input type="text" placeholder="Search for XSS .." name="search">
     <button type="submit"><strong>search</strong></button>
 </form>
+
+<style>
+
+    body {
+      background: url("{% static 'administrator/bg.png' %}") no-repeat center center fixed;
+      -webkit-background-size: cover;
+      -moz-background-size: cover;
+      -o-background-size: cover;
+      background-size: cover;
+    }
+  </style>
+</head>
 <br />
 <br />
 

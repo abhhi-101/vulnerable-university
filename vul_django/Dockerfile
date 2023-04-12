@@ -6,11 +6,10 @@ RUN mkdir $DockerHOME
 WORKDIR $DockerHOME
 
 COPY . $DockerHOME
-RUN pip install --upgrade pip  
+RUN pip install --upgrade pip 
+RUN apt-get update && \
+    apt-get install -y dnsutils
 RUN pip install -r requirements.txt
 
 EXPOSE 8000
-
-CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver
-RUN echo "[+] Now visit http://localhost to start learning. "
-RUN echo "Happy Hacking. "
+CMD python manage.py makemigrations && python manage.py migrate && python manage.py runserver 0.0.0.0:8000

@@ -1,31 +1,46 @@
-## How to access Vulnerable DJango application
+# Vulnerable Application in Django - vul_django
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
+
+Intentionally vuln web Application Security in django.
+Our roadmap build intentionally vuln web Application in django. The Vulnerability can based on OWASP top ten
+<br>
+
+Table of Contents
+=================
+
+* [Vul_django](#Vulnerable-Application-in-Django---vul_django)
+   * [Installation](#installation)
+      * [From Sources](#from-sources)
+      * [Docker Container](#from-docker-compose)
 
 ## Installation
-1. Clone GitHub repository
 
-``git clone https://github.com/abhhi-101/vulnerable_university.git``
+### From Sources
 
-2. Move in the application
+To setup the project on your local machine:
+<br>
 
-``cd vulnerable_university/vunlnerableuni``
+First, Clone the repository using GitHub website or git in Terminal
+```
+  git clone https://github.com/abhhi-101/vulnerable-university.git
+ ### Change the directory
+  cd vul_django
+```
+### Method 1
+1. Install all app and python requirements using installer file - `python -m pip install -r requirements.txt`
+2. Apply the migrations `python3 manage.py migrate`.<br>
+3. Finally, run the development server `python3 manage.py runserver`.<br>
+4. The project will be available at <http://127.0.0.1:8000> 
 
-3. Run the server 
+### From Docker-Compose 
+1. Install [Docker](https://www.docker.com)
+2. Run `docker-compose up` or `docker-compose up -d`
 
-``python manage.py runserver``
-
-4. Access the application by visitin - http://127.0.0.1:8000
-
-### Thanks
-
-## Vulnerabilities
-Done 1. Login bruteforce 
-Done 2. Insecure Password policy - removing AUTH_PASSWORD_VALIDATORS from setting.py file
-    - no password security policy
-Done 3. Reflected XSS - Search functionality
-Done 4. Debug message to unauthenticated user - by visiting non-exsisting page
-Done 5. CSRF - removing 'django.middleware.csrf.CsrfViewMiddleware', from setting.py file
-    - add a feedback page for POC - make it authenticated only
-Done 6. Clickjacking - removing 'django.middleware.clickjacking.XFrameOptionsMiddleware', from setting.py file
-    POC http://web.clickjacker.io/test?url=127.0.0.1:8000
-Done 7. Insecure access control - visit authenticate pages without authentication
-Done 8. Sensitive information in the source code
+### Build Docker Image and Run
+1. Clone the repository  &ensp; `git clone https://github.com/abhhi-101/vulnerable-university.git` 
+2. Change the Directory `cd vul_django`
+2. Build the docker image from Dockerfile using &ensp; `docker build -f Dockerfile -t vul_django .`
+3. Run the docker image &ensp;`docker run --rm -p 8000:8000 vul_django:latest`
+4. Browse to <http://127.0.0.1:8000> or <http://0.0.0.0:8000> 

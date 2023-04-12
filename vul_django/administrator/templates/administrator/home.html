@@ -1,11 +1,22 @@
 {% extends "administrator/base.html" %}
-{% block content %}
+{% block content %} {% load static %}
 <div text-align: left">
     <!-- Load icon library -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <br />
     <br />
     <!-- The form -->
+    <style>
+
+        body {
+          background: url("{% static 'administrator/bg.png' %}") no-repeat center center fixed;
+          -webkit-background-size: cover;
+          -moz-background-size: cover;
+          -o-background-size: cover;
+          background-size: cover;
+        }
+      </style>
+    </head>
     <form class="example" action="{% url 'search' %}">
         <input type="text" placeholder="Search for XSS .." name="search">
         <button type="submit"><i class="fa fa-search" ></i></button>
@@ -14,5 +25,5 @@
 </div>
     <br />
     <br />
-    <h3>Home page - coming soon</h3>
+      
 {% endblock content %}

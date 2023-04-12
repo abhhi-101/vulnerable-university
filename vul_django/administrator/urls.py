@@ -18,4 +18,5 @@ urlpatterns = [
     path("cmd_lab", views.cmd_lab, name="command_injection_lab")
 
 
+
 ]
