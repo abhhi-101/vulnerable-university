@@ -28,4 +28,4 @@ Done 5. CSRF - removing 'django.middleware.csrf.CsrfViewMiddleware', from settin
 Done 6. Clickjacking - removing 'django.middleware.clickjacking.XFrameOptionsMiddleware', from setting.py file
     POC http://web.clickjacker.io/test?url=127.0.0.1:8000
 Done 7. Insecure access control - visit authenticate pages without authentication
-8. Sensitive information in the source code
+Done 8. Sensitive information in the source code

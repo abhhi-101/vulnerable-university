@@ -1,7 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.models import User
-
+import subprocess
 # To exploit - sXSS and CSRF
 def change_username(request):
     if request.user.is_authenticated:
@@ -32,8 +32,43 @@ def bruteforce(request):
 def clickjacking(request):
     
     return render(request, 'administrator/clickjacking.html')
-
-
+#====== Exploiting CMD injection
+def cmd_lab(request):
+    if request.user.is_authenticated:
+        if(request.method=="POST"):
+            domain=request.POST.get('domain')
+            domain=domain.replace("https://www.",'')
+            os=request.POST.get('os')
+            print(os)
+            if(os=='win'):
+                command="nslookup {}".format(domain)
+            else:
+                command = "dig {}".format(domain)
+            
+            try:
+                # output=subprocess.check_output(command,shell=True,encoding="UTF-8")
+                process = subprocess.Popen(
+                    command,
+                    shell=True,
+                    stdout=subprocess.PIPE, 
+                    stderr=subprocess.PIPE)
+                stdout, stderr = process.communicate()
+                data = stdout.decode('utf-8')
+                stderr = stderr.decode('utf-8')
+                # res = json.loads(data)
+                # print("Stdout\n" + data)
+                output = data + stderr
+                print(data + stderr)
+            except:
+                output = "Something went wrong"
+                return render(request,'administrator/cmd_lab.html',{"output":output})
+            print(output)
+            return render(request,'administrator/cmd_lab.html',{"output":output})
+        else:
+            return render(request, 'administrator/cmd_lab.html')
+    else:
+        return redirect('login')
+#======
 
 # Learning Labs - content
 def labs(request):
@@ -54,7 +89,8 @@ def access_control(request):
 def sen_info(request):
     return render(request, 'administrator/info.html')
 #======
-
+def cmd(request):
+    return render(request, 'administrator/cmd.html')
 
 
 # System Pages

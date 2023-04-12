@@ -13,6 +13,9 @@ urlpatterns = [
     path("csrf", views.csrf_lab, name="csrf"),
     path("clickjacking", views.clickjacking, name="clickjacking"),
     path("access_control", views.access_control, name="brokenAccessControl"),
-    path("sen_info", views.sen_info, name="sen_info")
+    path("sen_info", views.sen_info, name="sen_info"),
+    path("cmd", views.cmd, name="command_injection"),
+    path("cmd_lab", views.cmd_lab, name="command_injection_lab")
+
 
 ]
