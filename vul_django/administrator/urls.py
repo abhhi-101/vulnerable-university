@@ -17,5 +17,6 @@ urlpatterns = [
     path("cmd", views.cmd, name="command_injection"),
     path("cmd_lab", views.cmd_lab, name="command_injection_lab"),
     path("db", views.db, name="db_injection"),
-    path("db_info", views.db_info, name="db")
+    path("db_info", views.db_info, name="db"),
+    path("debug", views.debug_lab, name="debug")
 ]

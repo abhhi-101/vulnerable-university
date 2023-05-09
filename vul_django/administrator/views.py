@@ -105,6 +105,9 @@ def cmd(request):
 #====== SQL 
 def db_info(request):
     return render(request, 'administrator/db_info.html')
+#====== Debug
+def debug_lab(request):
+    return render(request, 'administrator/debug.html')
 
 
 

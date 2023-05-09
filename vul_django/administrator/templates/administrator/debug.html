@@ -1,0 +1,29 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<h1>Insecure Debug Logging in Django Application Vulnerability</h1>
+	<p>Django is a popular web framework that is used to build secure and scalable web applications. However, if not configured properly, it can be vulnerable to various attacks. One such vulnerability is Insecure Debug Logging in Django Application.</p>
+    <h2>What is Insecure Debug Logging in Django Application Vulnerability?</h2>
+<p>Insecure Debug Logging in Django Application vulnerability occurs when debug information is logged in an insecure manner, which can lead to sensitive information leakage. When debugging is enabled in Django, it logs all the details of the request and response, including sensitive information such as passwords, credit card details, and other sensitive data. If this information is not properly secured, it can be accessed by attackers and used for malicious purposes.</p>
+
+<h2>Impact of Insecure Debug Logging in Django Application Vulnerability</h2>
+<p>The impact of Insecure Debug Logging in Django Application Vulnerability can be severe, as it can lead to sensitive data leakage. Attackers can use this data to launch various attacks, such as identity theft, financial fraud, and other malicious activities. Moreover, it can also damage the reputation of the organization and lead to legal consequences.</p>
+
+<h2>How to Prevent Insecure Debug Logging in Django Application Vulnerability</h2>
+<p>To prevent Insecure Debug Logging in Django Application Vulnerability, you can follow these best practices:</p>
+<ul>
+	<li>Disable Debug mode in production environments.</li>
+	<li>Ensure that sensitive information is not logged, such as passwords and credit card details.</li>
+	<li>Use secure logging mechanisms, such as encrypted logging or logging to a secure location.</li>
+	<li>Regularly review the logs and delete any sensitive information that may have been logged accidentally.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Insecure Debug Logging in Django Application Vulnerability can be a serious threat to the security of your web application. By following best practices and ensuring that your application is properly configured, you can prevent this vulnerability and keep your data secure.</p>
+
+</br>
+    <div align="right"> <button class="btn btn-info" type="button"
+        onclick="window.location.href='/non_existing_page'">Access Lab</button></div>
+    </p>
+
+{% endblock content %}
