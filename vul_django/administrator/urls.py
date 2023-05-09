@@ -19,5 +19,6 @@ urlpatterns = [
     path("db", views.db, name="db_injection"),
     path("db_info", views.db_info, name="db"),
     path("debug", views.debug_lab, name="debug"),
-    path("http", views.http, name="http")
+    path("http", views.http, name="http"),
+    path("bkl", views.bkl, name="bkl")
 ]

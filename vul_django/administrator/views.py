@@ -111,7 +111,9 @@ def debug_lab(request):
 #====== HTTP
 def http(request):
     return render(request, 'administrator/http.html')
-
+#====== Broken link
+def bkl(request):
+    return render(request, 'administrator/brokenLink.html')
 
 
 # System Pages
