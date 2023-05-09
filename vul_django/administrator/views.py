@@ -108,6 +108,9 @@ def db_info(request):
 #====== Debug
 def debug_lab(request):
     return render(request, 'administrator/debug.html')
+#====== HTTP
+def http(request):
+    return render(request, 'administrator/http.html')
 
 
 

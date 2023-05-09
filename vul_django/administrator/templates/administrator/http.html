@@ -1,0 +1,30 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+<h1>Insecure Connection Over HTTP Vulnerability</h1>
+	<p>The use of insecure connections over HTTP can pose a significant threat to the security of your web application. In this vulnerability content, we will discuss what this vulnerability is, the impact it can have, and how to prevent it.</p>
+
+    <h2>What is Insecure Connection Over HTTP Vulnerability?</h2>
+<p>Insecure Connection Over HTTP Vulnerability occurs when a website or web application communicates over an unencrypted HTTP connection instead of a secure HTTPS connection. This means that any data that is transmitted between the user and the web server is not encrypted, making it vulnerable to interception and tampering by attackers. This can lead to sensitive data being stolen, including usernames, passwords, credit card details, and other sensitive information.</p>
+
+<h2>Impact of Insecure Connection Over HTTP Vulnerability</h2>
+<p>The impact of Insecure Connection Over HTTP Vulnerability can be significant, as it can lead to sensitive data being stolen and used for malicious purposes. Attackers can intercept the data being transmitted and use it to launch various attacks, such as identity theft, financial fraud, and other malicious activities. Moreover, it can also damage the reputation of the organization and lead to legal consequences.</p>
+
+<h2>How to Prevent Insecure Connection Over HTTP Vulnerability</h2>
+<p>To prevent Insecure Connection Over HTTP Vulnerability, you can follow these best practices:</p>
+<ul>
+	<li>Use HTTPS to encrypt all communication between the user and the web server.</li>
+	<li>Ensure that all forms and login pages are served over HTTPS.</li>
+	<li>Use secure cookies that are only transmitted over HTTPS.</li>
+	<li>Regularly review your website or web application to ensure that all connections are encrypted.</li>
+</ul>
+
+<h2>Conclusion</h2>
+<p>Insecure Connection Over HTTP Vulnerability can be a serious threat to the security of your web application. By following best practices and ensuring that your application is properly configured, you can prevent this vulnerability and keep your data secure.</p>
+
+</br>
+<div align="right"> <button class="btn btn-info" type="button"
+    onclick="window.location.href='/http'">Access Lab</button></div>
+</p>
+
+
+{% endblock content %}
