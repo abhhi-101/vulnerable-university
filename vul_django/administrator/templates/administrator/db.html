@@ -1,0 +1,19 @@
+{% extends "administrator/base.html" %}
+{% block content %}
+
+<form class="example" action="{% url 'db_injection' %}">
+    <input type="text" placeholder="username" name="user">
+    <input type="text" placeholder="password" name="passwd">
+    <button type="submit"><strong>search</strong></button>
+</form>
+
+</br>
+</br>
+<h4>Response : <strong>{{ res }}</strong></pre></h4>
+</br>
+</br>
+</br>
+<h4>Query used: <pre><strong>{{ query }}</strong></pre></h4>
+
+
+{% endblock content %}

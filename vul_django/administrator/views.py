@@ -1,7 +1,9 @@
 from django.shortcuts import render, redirect
-from django.http import HttpResponse, HttpRequest
+#from django.http import HttpResponse, HttpRequest
 from django.contrib.auth.models import User
 import subprocess
+from students.models import Company
+
 # To exploit - sXSS and CSRF
 def change_username(request):
     if request.user.is_authenticated:
@@ -68,29 +70,42 @@ def cmd_lab(request):
             return render(request, 'administrator/cmd_lab.html')
     else:
         return redirect('login')
-#======
+#====== SQL lab
+def db(request):
+    username = request.GET.get('user','')
+    password = request.GET.get('passwd','')
+    result = Company.objects.raw("SELECT id, user FROM students_testauth WHERE user='" + username +"' AND passwd='"+ password+"'")
+    if result:
+        return render(request, 'administrator/db.html', {'res': "Login successfull", 'query': result})
+    else:
+        return render(request, 'administrator/db.html', {'res': "Wrong Creds",'query':result})
+
 
 # Learning Labs - content
 def labs(request):
     return render(request, 'administrator/labs.html')
-#======
+#====== XSS
 def xss_lab(request):
     if request.user.is_authenticated:
         return render(request, 'administrator/xss.html')
     else:
         return redirect('login')
-#======
+#====== CSRF 
 def csrf_lab(request):
     return render(request, 'administrator/csrf.html')
-#======
+#====== Access control
 def access_control(request):
     return render(request, 'administrator/access_control.html')
-#======
+#====== Sensitive info
 def sen_info(request):
     return render(request, 'administrator/info.html')
-#======
+#====== Command
 def cmd(request):
     return render(request, 'administrator/cmd.html')
+#====== SQL 
+def db_info(request):
+    return render(request, 'administrator/db_info.html')
+
 
 
 # System Pages
